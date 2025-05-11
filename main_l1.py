@@ -5,8 +5,7 @@ import logging
 import torch
 import time
 from model import SupResNet
-from dataset import *
-from utils import *
+from utils import get_transforms, get_label_dim, AverageMeter, set_optimizer, adjust_learning_rate, save_model
 
 print = logging.info
 
@@ -208,7 +207,7 @@ def main():
 
         if epoch % opt.save_curr_freq == 0:
             save_file = os.path.join(
-                opt.save_folder, 'curr_last.pth'.format(epoch=epoch))
+                opt.save_folder, 'curr_last.pth')
             save_model(model, optimizer, opt, epoch, save_file)
 
         if is_best:

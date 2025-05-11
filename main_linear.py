@@ -5,8 +5,7 @@ import logging
 import torch
 import time
 from model import Encoder, model_dict
-from dataset import *
-from utils import *
+from utils import AverageMeter, adjust_learning_rate, set_optimizer, get_label_dim, get_transforms
 
 print = logging.info
 

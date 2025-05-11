@@ -4,8 +4,7 @@ import sys
 import logging
 import torch
 import time
-from dataset import *
-from utils import *
+from utils import AverageMeter, adjust_learning_rate, set_optimizer, save_model, get_transforms, TwoCropTransform
 from model import Encoder
 from loss import RnCLoss
 
